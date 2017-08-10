@@ -25,7 +25,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 */
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
-if(! is_plugin_active( 'woocommerce/woocommerce.php')) return;
+if(! is_plugin_active( 'woocommerce/woocommerce.php')) {
 
 	function woodiscpr_error_notice() {
 		?>
