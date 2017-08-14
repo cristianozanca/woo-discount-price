@@ -1,4 +1,4 @@
-=== WooCommerce discount price ===
+=== Discount and regular price cart and checkout page display WooCommerce ===
 Contributors: cristianozanca
 Tags: woocommerce, plugin, theme, plugins, themes, e-commerce, shop
 Requires at least: 4.0
@@ -14,6 +14,12 @@ At the end of the cart and of the checkout page diplays the total amount of mone
 Thanks to Rodolfo Melogli Bülent Sakarya Daniel Pataki
 
 == Changelog ==
+
+= 0.1.2 =
+* Change name
+
+= 0.1.1 =
+* New check WooCommerce plugin activated for multisite
 
 = 0.1 =
 * Initial release

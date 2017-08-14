@@ -1,9 +1,9 @@
 <?php
 /*
-Plugin Name: WooCommerce discount price
+Plugin Name: Discount and regular price cart and checkout page display WooCommerce
 Plugin URI:  https://zanca.it/plugin
-Description: display the discounted price in cart
-Version:     0.1
+Description: display the regular and discounted price in cart and checkout page
+Version:     0.1.2
 Author:      Cristiano Zanca
 Author URI:  https://zanca.it
 License:     GPL2
@@ -68,14 +68,6 @@ function woodiscpr_change_cart_table_price_display( $price, $values, $cart_item_
 	return $price;
 }
 ##################
-
-/**
- * @snippet Display Total Discount / Savings @ WooCommerce Cart/Checkout
- * @how-to Watch tutorial @ https://businessbloomer.com/?p=19055
- * @sourcecode https://businessbloomer.com/?p=20362
- * @author Rodolfo Melogli, Bülent Sakarya
- * @testedwith WooCommerce 3.0
- */
 
 function woodiscpr_wc_discount_total_30() {
 
