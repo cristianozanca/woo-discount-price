@@ -1,6 +1,6 @@
 === Discount and regular price cart and checkout page display WooCommerce ===
 Contributors: cristianozanca
-Tags: woocommerce, plugin, theme, plugins, themes, e-commerce, shop
+Tags: woocommerce, e-commerce, shop, price, discount, cart, checkout
 Requires at least: 4.0
 Tested up to: 4.8.1
 Stable tag: trunk
@@ -14,6 +14,9 @@ At the end of the cart and of the checkout page diplays the total amount of mone
 Thanks to Rodolfo Melogli Bülent Sakarya Daniel Pataki
 
 == Changelog ==
+
+= 0.1.3 =
+* checkout display regular and discount price better
 
 = 0.1.2 =
 * Change name

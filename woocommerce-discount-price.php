@@ -3,7 +3,7 @@
 Plugin Name: Discount and regular price cart and checkout page display WooCommerce
 Plugin URI:  https://zanca.it/plugin
 Description: display the regular and discounted price in cart and checkout page
-Version:     0.1.2
+Version:     0.1.3
 Author:      Cristiano Zanca
 Author URI:  https://zanca.it
 License:     GPL2
@@ -30,7 +30,7 @@ if(! is_plugin_active( 'woocommerce/woocommerce.php')) {
 	function woodiscpr_error_notice() {
 		?>
 		<div class="notice error is-dismissible">
-			<p><?php _e( 'Please install or activate WooCommerce Plugin, it is required for WooCommerce Discount Price Plugin to work ', 'woodiscpr_textdomain' ); ?></p>
+			<p><?php _e( 'Please install or activate WooCommerce Plugin, it is required for WooCommerce Discount Price Plugin to work ', 'woo-discount-price' ); ?></p>
 		</div>
 		<?php
 	}
@@ -48,7 +48,7 @@ function check_wc_version(){
 	if ( function_exists( 'WC' ) && ( version_compare( WC()->version, '3.0', "<" ) )) {
 		?>
 		<div class="notice error is-dismissible">
-			<p><?php _e('WooCommerce version detected: '. WC()->version.' please update to 3.0','woodiscpr_textdomain' ); ?></p>
+			<p><?php _e('WooCommerce version detected: '. WC()->version.' please update to 3.0','woo-discount-price' ); ?></p>
 		</div>
 		<?php
 	}
@@ -104,7 +104,44 @@ add_action( 'woocommerce_cart_totals_after_order_total', 'woodiscpr_wc_discount_
 add_action( 'woocommerce_review_order_after_order_total', 'woodiscpr_wc_discount_total_30', 99);
 ####################################################
 
+/*
+ * Use our custom woo checkout form template
+ * Source: apppresser.com
+ */
+add_filter( 'woocommerce_locate_template', 'custom_woocommerce_locate_template', 10, 3 );
 
+function custom_woocommerce_locate_template( $template, $template_name, $template_path ) {
+
+	global $woocommerce;
+
+	$_template = $template;
+
+	if ( !$template_path ) $template_path = $woocommerce->template_url;
+
+	$plugin_path  = untrailingslashit( plugin_dir_path( __FILE__ ) ) . '/templates/';
+
+	// Look within passed path within the theme
+	$template = locate_template(
+		array(
+			$template_path . $template_name,
+			$template_name
+		)
+	);
+
+	// Modification: Get the template from this plugin, if it exists
+	if ( file_exists( $plugin_path . $template_name ) ) {
+		$template = $plugin_path . $template_name;
+	}
+
+	// Use default template if no other exists
+	if ( !$template ) {
+		$template = $_template;
+	}
+
+	// Return what we found
+	return $template;
+
+}
 
 
 
