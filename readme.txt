@@ -15,6 +15,9 @@ Thanks to Rodolfo Melogli Bülent Sakarya Daniel Pataki Scott Bolinger
 
 == Changelog ==
 
+= 0.2.0 =
+* new function display cart price
+
 = 0.1.8 =
 * starting value, some fixes
 
