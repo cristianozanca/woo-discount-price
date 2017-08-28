@@ -2,18 +2,8 @@
 /**
  * Review order table
  *
- * This template can be overridden by copying it to yourtheme/woocommerce/checkout/review-order.php.
+ * This template has been overridden by copying it from plugins/woocommerce/templates/checkout/review-order.php.
  *
- * HOWEVER, on occasion WooCommerce will need to update template files and you
- * (the theme developer) will need to copy the new files to your theme to
- * maintain compatibility. We try to do this as little as possible, but it does
- * happen. When this occurs the version of the template file will be bumped and
- * the readme will list any important changes.
- *
- * @see 	    https://docs.woocommerce.com/document/template-structure/
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     2.3.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -39,14 +29,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 					<tr class="<?php echo esc_attr( apply_filters( 'woocommerce_cart_item_class', 'cart_item', $cart_item, $cart_item_key ) ); ?>">
 						<td class="product-name">
 							<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; ?>
-							<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); ?>
+							<?php /* echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); */ ?>
 							<?php echo WC()->cart->get_item_data( $cart_item ); ?>
 
 						</td>
 						<td class="product-total">
-
+							<!-- this is the new price display  -->
 							<?php echo $_product->get_price_html(); ?>
-							<?php /* echo  apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key ); */ ?>
+							<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times; %s', $cart_item['quantity'] ) . ' = </strong>', $cart_item, $cart_item_key ); ?>
+							<?php echo  apply_filters( 'woocommerce_cart_item_subtotal', WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] ), $cart_item, $cart_item_key );  ?>
 
 						</td>
 					</tr>
