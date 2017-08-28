@@ -6,7 +6,7 @@ if ( ! defined( 'ABSPATH' ) ) exit;
 ?>
 
 
-<h1><?php echo __( 'Discount Price Settings Page', 'woo-discount-price' );?>/h1>
+<h1><?php echo __( 'Discount Price Settings Page', 'woo-discount-price' );?></h1>
 
 
 <form method="POST">
