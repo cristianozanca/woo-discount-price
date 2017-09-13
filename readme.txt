@@ -1,7 +1,7 @@
 === Discount and regular price cart and checkout page display WooCommerce ===
 Contributors: cristianozanca
 Tags: woocommerce, e-commerce, shop, price, discount, cart, basket, checkout, prezzo, carrello, sconto, scontato, e-shop
-Requires at least: 4.0
+Requires at least: 4.6
 Tested up to: 4.8.1
 Stable tag: trunk
 
@@ -14,9 +14,6 @@ At the end of the cart and of the checkout page diplays the total amount of mone
 Thanks to Rodolfo Melogli Bülent Sakarya Daniel Pataki Scott Bolinger
 
 == Changelog ==
-
-= 0.2.0 =
-* new function display cart price
 
 = 0.1.8 =
 * starting value, some fixes

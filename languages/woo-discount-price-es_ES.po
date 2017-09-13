@@ -1,0 +1,40 @@
+# Translation of Plugins - Discount and regular price cart and checkout page display WooCommerce - Development (trunk) in Spanish (Spain)
+# This file is distributed under the same license as the Plugins - Discount and regular price cart and checkout page display WooCommerce - Development (trunk) package.
+msgid ""
+msgstr ""
+"PO-Revision-Date: 2017-08-30 12:30:23+0000\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
+"Language: es\n"
+"Project-Id-Version: Plugins - Discount and regular price cart and checkout page display WooCommerce - Development (trunk)\n"
+
+#. Author URI of the plugin/theme
+msgid "https://zanca.it"
+msgstr "https://zanca.it"
+
+#. Author of the plugin/theme
+msgid "Cristiano Zanca"
+msgstr "Cristiano Zanca"
+
+#. Description of the plugin/theme
+msgid "display the discounted price in cart"
+msgstr "Muestra el precio con descuento en el carrito"
+
+#. Plugin URI of the plugin/theme
+msgid "https://zanca.it/plugin"
+msgstr "https://zanca.it/plugin"
+
+#. Plugin Name of the plugin/theme
+msgid "WooCommerce discount price"
+msgstr "Precio de descuento de WooCommerce "
+
+#: woocommerce-discount-price.php:93 woocommerce-discount-price.php:94
+msgid "You Saved"
+msgstr "Ahorras"
+
+#: woocommerce-discount-price.php:28
+msgid "Please install or activate WooCommerce Plugin, it is required for WooCommerce Discount Price Plugin to work "
+msgstr "Por favor, instala o activa WooCommerce, es necesario para que Precio de descuento de WooCommerce funcione"
