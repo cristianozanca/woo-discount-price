@@ -3,7 +3,7 @@
 Plugin Name: Discount and regular price cart and checkout page display WooCommerce
 Plugin URI:  https://zanca.it/plugin
 Description: display the regular and discounted price in cart and checkout page
-Version:     0.1.8
+Version:     0.1.9
 Contributors: cristianozanca
 Author:      Cristiano Zanca
 Author URI:  https://zanca.it
@@ -15,9 +15,14 @@ Text Domain: woo-discount-price
 
 /* TODO  check network activation */
 
-if ( ! class_exists( 'woodiscpr' ) ) :
+function woo_discount_price_load_plugin_textdomain() {
+	load_plugin_textdomain( 'woo-discount-price', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+}
+add_action( 'plugins_loaded', 'woo_discount_price_load_plugin_textdomain' );
+
+if ( ! class_exists( 'woo_discount_price' ) ) :
 {
-	class woodiscpr
+	class woo_discount_price
 	{
 
 		public function __construct() {
@@ -25,6 +30,8 @@ if ( ! class_exists( 'woodiscpr' ) ) :
 			if ( ! defined( 'ABSPATH' ) ) {
 				exit; // Exit if accessed directly
 			}
+
+
 
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -67,6 +74,8 @@ if ( ! class_exists( 'woodiscpr' ) ) :
 				update_option('woodiscpr_you_save', 1);
 			}
 
+			load_plugin_textdomain( 'woo-discount-price' );
+
 			add_action( 'admin_notices', 'check_wc_version');
 			add_action( 'admin_notices', 'woodiscpr_error_notice' );
 			add_filter( 'woocommerce_cart_item_price', 'woodiscpr_change_cart_table_price_display', 30, 3 );
@@ -86,7 +95,7 @@ if ( ! class_exists( 'woodiscpr' ) ) :
 
 
 //Creates a new instance
-new woodiscpr;
+new woo_discount_price;
 
 endif;
 
