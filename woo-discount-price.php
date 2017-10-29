@@ -3,7 +3,7 @@
 Plugin Name: Discount and regular price cart and checkout page display WooCommerce
 Plugin URI:  https://zanca.it/plugin
 Description: display the regular and discounted price in cart and checkout page
-Version:     0.1.9
+Version:     1.0.1
 Contributors: cristianozanca
 Author:      Cristiano Zanca
 Author URI:  https://zanca.it
@@ -16,10 +16,10 @@ Domain Path: /languages
 
 /* TODO  check network activation */
 
-function woo_discount_price_load_plugin_textdomain() {
-	load_plugin_textdomain( 'woo-discount-price', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+function woo_discount_price_textdomain() {
+	load_plugin_textdomain( 'woo-discount-price', FALSE, basename( dirname( __FILE__ ) ) . '/languages' );
 }
-add_action( 'plugins_loaded', 'woo_discount_price_load_plugin_textdomain' );
+add_action( 'plugins_loaded', 'woo_discount_price_textdomain' );
 
 if ( ! class_exists( 'woo_discount_price' ) ) :
 {
@@ -34,17 +34,17 @@ if ( ! class_exists( 'woo_discount_price' ) ) :
 
 
 
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+			include_once ABSPATH . 'wp-admin/includes/plugin.php';
 
-			include_once( plugin_dir_path( __FILE__ ) . 'inc/custom_template.php' );
+			include_once plugin_dir_path( __FILE__ ) . 'inc/custom_template.php';
 
-			include_once( plugin_dir_path( __FILE__ ) . 'inc/display_cart.php' );
+			include_once plugin_dir_path( __FILE__ ) . 'inc/display_cart.php';
 
-			include_once( plugin_dir_path( __FILE__ ) . 'inc/display_total.php' );
+			include_once plugin_dir_path( __FILE__ ) . 'inc/display_total.php';
 
-			include_once( plugin_dir_path( __FILE__ ) . 'inc/menu_setup.php' );
+			include_once plugin_dir_path( __FILE__ ) . 'inc/menu_setup.php';
 
-			include_once( plugin_dir_path( __FILE__ ) . 'inc/setup_page_display.php' );
+			include_once plugin_dir_path( __FILE__ ) . 'inc/setup_page_display.php';
 
 			
 
